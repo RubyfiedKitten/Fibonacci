@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://bysbh0jvrme0c"]
+
+[ext_resource type="Script" uid="uid://bwm43hpk6nnoh" path="res://Main.gd" id="1_glv2v"]
+[ext_resource type="Texture2D" uid="uid://bhomy5jb6j7dh" path="res://Mr. Snuggles Worth.jpeg" id="2_uu6xs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_glv2v"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_r0du0"]
+font_size = 35
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_glv2v")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 235.0
+offset_top = 293.81
+offset_right = 485.0
+offset_bottom = 443.81
+theme_override_font_sizes/font_size = 47
+placeholder_text = "###"
+alignment = 1
+caret_blink = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 7.54
+offset_top = 72.675
+offset_right = 710.54
+offset_bottom = 243.675
+text = "Give me a value between 1 and 5555 and I will spit out that fibonacci number."
+label_settings = SubResource("LabelSettings_glv2v")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="OutputLabel" type="Label" parent="."]
+offset_left = 7.0
+offset_top = 487.0
+offset_right = 710.0
+offset_bottom = 551.0
+text = ":)"
+label_settings = SubResource("LabelSettings_r0du0")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 26.0
+offset_top = 591.0
+offset_right = 246.0
+offset_bottom = 811.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.045, 3.045)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_uu6xs")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
